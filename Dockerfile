@@ -13,7 +13,8 @@ FROM centos:7 as final
 
 # Install jq to edit config files like "local.conf"
 RUN yum update -y && \
-    yum install -y epel-release jq
+    yum install -y epel-release && \
+    yum install -y jq
 
 COPY --from=downloader /zt-install.sh /usr/bin/
 
